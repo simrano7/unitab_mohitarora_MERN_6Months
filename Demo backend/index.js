@@ -1,10 +1,14 @@
 const express = require("express")
 
 const app = express()
-
 const PORT = 5000
+const cors = require('cors');
+app.use(cors())
 app.use(express.urlencoded({extended:false}))
-const routes = require('./server/routes/apiRoutes')
+
+const seeder = require("./server/config/seeder")
+seeder.adminreg()
+const routes = require('./server/routes/apiroutes')
 app.use('/api',routes)
 const db = require("./server/config/db")
 

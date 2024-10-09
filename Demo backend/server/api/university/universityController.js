@@ -4,7 +4,7 @@ add = (req,res)=>{
     if(!req.body.universityName){
         errMsg.push("university name is required");
     }
-    if(!req.body.universityImage){
+    if(!req.file){
         errMsg.push("university Image is required")
     }
     if(!req.body.description){
@@ -25,7 +25,7 @@ add = (req,res)=>{
         if(data == null){
     let universityObj = new University()
     universityObj.universityName = req.body.universityName
-    universityObj.universityImage = req.body.universityImage
+    universityObj.universityImage = "universities/"+req.file.filename
     universityObj.description = req.body.description
     universityObj.save()
         .then((unidata)=>{

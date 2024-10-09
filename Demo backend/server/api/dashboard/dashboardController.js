@@ -8,7 +8,7 @@ dashboard =async(req,res)=>{
         message:"dashboard loaded ",
         success:true,
         status:200,
-        totalCategories:totalUniversities,
+        totalUniversities:totalUniversities,
         totalStudents:totalStudents
     })
 }

@@ -47,7 +47,8 @@ register =(req,res)=>{
                                 res.send({
                                     message:"Student Registered Successfully",
                                     status:200,
-                                    success:true
+                                    success:true,
+                                    data:userregistereddata
                                 })
                         })
                         .catch((err)=>{
